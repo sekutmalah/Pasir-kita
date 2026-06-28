@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PasirKita — Pasir Kucing Murah, Hantar Free Shah Alam | RM69 Bundle</title>
+<meta name="description" content="Imported clumping cat litter, repacked fresh. 5kg = RM14, or grab the 25kg bundle for RM69 with FREE car delivery in Shah Alam. Order by WhatsApp." />
+
+<!--
+  ============================================================
+  PasirKita — cat litter landing page (single file, no frameworks)
+  Deploy: drop this index.html into Netlify / Vercel and publish.
+
+  >>> BEFORE GOING LIVE, change these 2 things:
+      1. WHATSAPP NUMBER — search for  60123456789  and replace
+         every instance with your real number (format: 60 + number,
+         no +, no spaces. e.g. 0123456789 -> 60123456789).
+      2. Anything in [SAMPLE] comments (testimonials are placeholders).
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --forest:#13533a;
+    --forest-2:#0e3f2c;
+    --leaf:#27a35f;
+    --leaf-cta:#1faf54;
+    --leaf-soft:#e3f3e9;
+    --sand:#e7d8b8;
+    --sand-deep:#cdb888;
+    --cream:#f6f3ea;
+    --ink:#15271d;
+    --muted:#5c6f63;
+    --white:#ffffff;
+    --line:#e7e3d6;
+    --shadow-sm:0 2px 10px rgba(19,83,58,.08);
+    --shadow-md:0 14px 36px rgba(19,83,58,.14);
+    --shadow-lg:0 26px 60px rgba(14,63,44,.22);
+    --r:18px;
+    --maxw:1120px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-.02em;margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--leaf);color:#fff}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .eyebrow{
+    font-family:"Plus Jakarta Sans";font-weight:700;font-size:.74rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--leaf);display:inline-flex;align-items:center;gap:8px
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--leaf);border-radius:2px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"Plus Jakarta Sans";font-weight:700;font-size:1rem;
+    padding:15px 26px;border-radius:999px;border:0;cursor:pointer;
+    transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .18s var(--ease);
+    white-space:nowrap;
+  }
+  .btn:focus-visible{outline:3px solid var(--forest);outline-offset:3px}
+  .btn-wa{background:var(--leaf-cta);color:#fff;box-shadow:0 10px 24px rgba(31,175,84,.35)}
+  .btn-wa:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(31,175,84,.42)}
+  .btn-ghost{background:transparent;color:var(--forest);border:2px solid var(--sand-deep)}
+  .btn-ghost:hover{background:#fff;transform:translateY(-2px)}
+  .btn-cream{background:#fff;color:var(--forest);box-shadow:var(--shadow-sm)}
+  .btn-cream:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .wa-ico{width:20px;height:20px;flex:none}
+
+  section{position:relative}
+  .pad{padding:74px 0}
+  .center{text-align:center}
+  .lead{color:var(--muted);font-size:1.06rem;max-width:560px}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(246,243,234,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;color:var(--forest)}
+  .brand .pawmark{width:30px;height:30px;background:var(--forest);border-radius:9px;display:grid;place-items:center}
+  .brand .pawmark svg{width:18px;height:18px;fill:#fff}
+  .brand b{color:var(--leaf)}
+  .nav .btn{padding:10px 18px;font-size:.92rem}
+  .nav-links{display:none;gap:26px;font-weight:600;font-size:.95rem;color:var(--forest)}
+  .nav-links a{opacity:.8}.nav-links a:hover{opacity:1}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:46px 0 64px;position:relative}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(140% 90% at 90% -10%, rgba(39,163,95,.10), transparent 55%),
+      radial-gradient(120% 80% at -10% 10%, rgba(231,216,184,.55), transparent 50%);
+  }
+  .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .pill{
+    display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
+    padding:7px 13px;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--forest);box-shadow:var(--shadow-sm)
+  }
+  .pill svg{width:14px;height:14px;fill:var(--leaf)}
+  .hero h1{font-size:clamp(2.3rem,8.4vw,4.1rem);font-weight:800;color:var(--forest)}
+  .hero h1 .hl{position:relative;color:var(--leaf);white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.05em;height:.28em;background:var(--sand);z-index:-1;border-radius:4px}
+  .hero .sub{margin-top:18px;font-size:1.12rem;color:var(--muted);max-width:480px}
+  .hero .sub b{color:var(--ink)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .trust{display:flex;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap;font-size:.86rem;color:var(--muted);font-weight:600}
+  .trust .dot{width:5px;height:5px;border-radius:50%;background:var(--sand-deep)}
+  .trust .stars{color:#e8a93b;letter-spacing:1px}
+
+  /* hero visual: pack + price tag */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:300px}
+  .pack{
+    position:relative;width:215px;height:268px;border-radius:20px 20px 16px 16px;
+    background:linear-gradient(160deg,#1c6647,#13533a 60%,#0e3f2c);
+    box-shadow:var(--shadow-lg);transform:rotate(-5deg);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .pack::before{ /* crimped top seal */
+    content:"";position:absolute;top:-9px;left:14px;right:14px;height:20px;border-radius:6px;
+    background:repeating-linear-gradient(90deg,#0e3f2c 0 6px,#13533a 6px 12px);
+    box-shadow:0 3px 8px rgba(0,0,0,.18)
+  }
+  .pack .glow{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(120deg,rgba(255,255,255,.14),transparent 45%)}
+  .pack .plabel{position:absolute;left:18px;right:18px;top:34px;background:#fff;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+  .pack .plabel .pb{display:flex;align-items:center;justify-content:center;gap:6px;font-family:"Bricolage Grotesque";font-weight:800;color:var(--forest);font-size:1.05rem}
+  .pack .plabel .pb svg{width:16px;height:16px;fill:var(--leaf)}
+  .pack .plabel small{display:block;font-size:.64rem;letter-spacing:.14em;color:var(--muted);font-weight:700;text-transform:uppercase;margin-top:2px}
+  .pack .kg{position:absolute;left:0;right:0;bottom:30px;text-align:center;color:#fff}
+  .pack .kg .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:3.1rem;line-height:1}
+  .pack .kg .t{font-size:.74rem;letter-spacing:.34em;font-weight:700;opacity:.85;text-transform:uppercase}
+  .pricetag{
+    position:absolute;right:-6px;top:-6px;z-index:3;background:var(--sand);color:var(--forest);
+    padding:12px 16px 12px 26px;border-radius:8px;box-shadow:var(--shadow-md);transform:rotate(6deg);
+    font-family:"Bricolage Grotesque";font-weight:800
+  }
+  .pricetag::before{content:"";position:absolute;left:11px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:var(--forest)}
+  .pricetag .rm{font-size:.7rem;vertical-align:top;opacity:.7}
+  .pricetag .big{font-size:1.5rem}
+  .pricetag small{display:block;font-family:"Plus Jakarta Sans";font-weight:700;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+  .paw-deco{position:absolute;opacity:.12;fill:var(--forest)}
+  .paw-deco.p1{width:52px;left:2%;bottom:8%;transform:rotate(-18deg)}
+  .paw-deco.p2{width:34px;right:4%;bottom:22%;transform:rotate(20deg)}
+
+  /* ---------- VALUE PROPS ---------- */
+  .props{background:var(--white)}
+  .prop-grid{display:grid;gap:16px;margin-top:38px;grid-template-columns:1fr}
+  .prop{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:24px;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease)
+  }
+  .prop:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .prop .ico{width:48px;height:48px;border-radius:12px;background:var(--leaf-soft);display:grid;place-items:center;margin-bottom:14px}
+  .prop .ico svg{width:24px;height:24px;fill:var(--forest)}
+  .prop h3{font-size:1.16rem;margin-bottom:6px;color:var(--forest)}
+  .prop p{color:var(--muted);font-size:.96rem}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:linear-gradient(180deg,var(--cream),#efeadd)}
+  .price-grid{display:grid;gap:22px;margin-top:42px;align-items:center;grid-template-columns:1fr}
+  .card{background:#fff;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow-sm);position:relative}
+  /* single */
+  .card-single{padding:30px}
+  .card-single .ct{font-weight:700;color:var(--muted);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+  .card-single .name{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;color:var(--forest);margin-top:6px}
+  .price{display:flex;align-items:flex-end;gap:6px;margin:14px 0 4px}
+  .price .cur{font-weight:700;color:var(--muted);font-size:1rem;margin-bottom:9px}
+  .price .amt{font-family:"Bricolage Grotesque";font-weight:800;font-size:3rem;line-height:1;color:var(--ink)}
+  .price .per{color:var(--muted);font-weight:600;margin-bottom:8px;font-size:.92rem}
+  .perkg{display:inline-block;background:var(--leaf-soft);color:var(--forest);font-weight:700;font-size:.8rem;padding:5px 11px;border-radius:999px;margin-top:6px}
+  .feat{list-style:none;padding:0;margin:20px 0 24px;display:grid;gap:11px}
+  .feat li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ink)}
+  .feat li svg{width:18px;height:18px;fill:var(--leaf);flex:none;margin-top:3px}
+  .feat li.off{color:var(--muted)}
+  .feat li.off svg{fill:#c4ccc6}
+  .card .btn{width:100%}
+
+  /* bundle — DOMINANT */
+  .card-bundle{
+    background:linear-gradient(165deg,#176b4a,#13533a 55%,#0e3f2c);
+    color:#fff;padding:34px 30px 30px;border:0;box-shadow:var(--shadow-lg);
+    transform:none;overflow:hidden
+  }
+  .card-bundle::after{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .ribbon{
+    position:absolute;top:18px;right:-42px;transform:rotate(45deg);background:var(--sand);color:var(--forest);
+    font-weight:800;font-size:.72rem;letter-spacing:.12em;padding:7px 52px;box-shadow:var(--shadow-sm);font-family:"Plus Jakarta Sans"
+  }
+  .card-bundle .ct{color:var(--sand);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+  .card-bundle .name{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.9rem;margin-top:6px}
+  .card-bundle .price .cur{color:rgba(255,255,255,.7)}
+  .card-bundle .price .amt{color:#fff;font-size:3.8rem}
+  .card-bundle .price .per{color:rgba(255,255,255,.7)}
+  .strike{color:rgba(255,255,255,.6);text-decoration:line-through;font-weight:600;margin-left:4px;font-size:1rem}
+  .save-badge{display:inline-flex;align-items:center;gap:7px;background:var(--leaf);color:#fff;font-weight:800;font-size:.84rem;padding:7px 14px;border-radius:999px;margin-top:10px;box-shadow:0 6px 14px rgba(0,0,0,.2)}
+  .card-bundle .perkg{background:rgba(255,255,255,.14);color:#fff}
+  .card-bundle .feat li{color:#eafff2}
+  .card-bundle .feat li svg{fill:var(--sand)}
+  .card-bundle .btn-wa{background:#fff;color:var(--forest)}
+  .card-bundle .btn-wa:hover{background:var(--sand)}
+  .freebadge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.4);border-radius:12px;padding:10px 14px;margin:16px 0;font-weight:700;font-size:.92rem}
+  .freebadge svg{width:20px;height:20px;fill:var(--sand);flex:none}
+
+  /* ---------- WHY 5 PACKS ---------- */
+  .why{background:var(--white)}
+  .why-grid{display:grid;gap:32px;margin-top:40px;grid-template-columns:1fr}
+  .compare{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .compare .row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 22px;border-bottom:1px solid var(--line);align-items:center}
+  .compare .row:last-child{border-bottom:0}
+  .compare .row.head{background:#fff;font-weight:700}
+  .compare .row .lbl{font-weight:600;color:var(--ink)}
+  .compare .row .lbl small{display:block;color:var(--muted);font-weight:500;font-size:.82rem}
+  .compare .row .val{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.15rem;color:var(--muted)}
+  .compare .row.win{background:var(--leaf-soft)}
+  .compare .row.win .val{color:var(--forest)}
+  .compare .row.win .lbl{color:var(--forest)}
+  .why-points{display:grid;gap:18px}
+  .why-point{display:flex;gap:14px;align-items:flex-start}
+  .why-point .n{flex:none;width:38px;height:38px;border-radius:11px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800}
+  .why-point h3{font-size:1.1rem;color:var(--forest);margin-bottom:3px}
+  .why-point p{color:var(--muted);font-size:.95rem}
+
+  /* ---------- DELIVERY ---------- */
+  .delivery{background:var(--forest);color:#fff;overflow:hidden}
+  .delivery::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0,rgba(39,163,95,.25),transparent 55%)}
+  .delivery .wrap{position:relative;z-index:1}
+  .delivery .eyebrow{color:var(--sand)}.delivery .eyebrow::before{background:var(--sand)}
+  .delivery h2{color:#fff}
+  .delivery .lead{color:rgba(255,255,255,.8)}
+  .steps{display:grid;gap:18px;margin-top:42px;grid-template-columns:1fr;counter-reset:step}
+  .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:24px;position:relative}
+  .step .si{width:46px;height:46px;border-radius:12px;background:var(--sand);display:grid;place-items:center;margin-bottom:14px}
+  .step .si svg{width:24px;height:24px;fill:var(--forest)}
+  .step h3{font-size:1.12rem;margin-bottom:6px}
+  .step p{color:rgba(255,255,255,.78);font-size:.95rem}
+  .step .num{position:absolute;top:18px;right:22px;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.5rem;color:rgba(255,255,255,.18)}
+  .cov{display:flex;align-items:center;gap:12px;margin-top:30px;background:rgba(0,0,0,.18);border-radius:14px;padding:16px 20px;flex-wrap:wrap}
+  .cov svg{width:24px;height:24px;fill:var(--sand);flex:none}
+  .cov b{color:#fff}.cov span{color:rgba(255,255,255,.78);font-size:.94rem}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .social{background:var(--cream)}
+  .tnote{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:.78rem;font-weight:600;padding:6px 13px;border-radius:999px;margin-top:14px}
+  .t-grid{display:grid;gap:18px;margin-top:36px;grid-template-columns:1fr}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-sm)}
+  .tcard .stars{color:#e8a93b;letter-spacing:2px;font-size:.95rem}
+  .tcard p{margin:12px 0 16px;font-size:.98rem;color:var(--ink)}
+  .tcard .who{display:flex;align-items:center;gap:12px}
+  .tcard .av{width:42px;height:42px;border-radius:50%;background:var(--leaf-soft);color:var(--forest);display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800}
+  .tcard .who b{display:block;font-size:.94rem;color:var(--ink)}
+  .tcard .who small{color:var(--muted);font-size:.82rem}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--white)}
+  .acc{max-width:760px;margin:38px auto 0;display:grid;gap:12px}
+  .qa{border:1px solid var(--line);border-radius:14px;background:var(--cream);overflow:hidden}
+  .qa button{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:none;border:0;padding:20px 22px;cursor:pointer;text-align:left;
+    font-family:"Bricolage Grotesque";font-weight:700;font-size:1.05rem;color:var(--forest)
+  }
+  .qa button:focus-visible{outline:3px solid var(--leaf);outline-offset:-3px}
+  .qa .plus{flex:none;width:24px;height:24px;position:relative;transition:transform .25s var(--ease)}
+  .qa .plus::before,.qa .plus::after{content:"";position:absolute;background:var(--leaf);border-radius:2px}
+  .qa .plus::before{left:4px;right:4px;top:11px;height:2px}
+  .qa .plus::after{top:4px;bottom:4px;left:11px;width:2px}
+  .qa[aria-open="true"] .plus{transform:rotate(45deg)}
+  .qa .panel{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+  .qa .panel p{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{background:linear-gradient(160deg,#176b4a,#0e3f2c);color:#fff;text-align:center;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 90% at 50% -10%,rgba(231,216,184,.18),transparent 60%)}
+  .final .wrap{position:relative;z-index:1}
+  .final h2{font-size:clamp(2rem,7vw,3.2rem);color:#fff;font-weight:800}
+  .final h2 .sand{color:var(--sand)}
+  .final p{color:rgba(255,255,255,.82);max-width:480px;margin:16px auto 0;font-size:1.08rem}
+  .final .hero-cta{justify-content:center}
+  .final .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .final .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .final .micro{margin-top:18px;font-size:.85rem;color:rgba(255,255,255,.6)}
+  .paw-band{position:absolute;bottom:-20px;left:0;right:0;display:flex;justify-content:space-around;opacity:.08;pointer-events:none}
+  .paw-band svg{width:46px;fill:#fff}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--forest-2);color:rgba(255,255,255,.7);padding:40px 0 110px}
+  .foot{display:grid;gap:18px;grid-template-columns:1fr}
+  .foot .brand{color:#fff}.foot .brand b{color:var(--sand)}
+  .foot p{font-size:.9rem;line-height:1.7}
+  .foot a{color:var(--sand);font-weight:600}
+  .foot .fcol h4{color:#fff;font-size:.95rem;margin:0 0 10px;font-family:"Plus Jakarta Sans";font-weight:700}
+  .foot .fcol a{display:block;color:rgba(255,255,255,.7);font-weight:500;margin-bottom:7px;font-size:.9rem}
+  .foot .fcol a:hover{color:#fff}
+  .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:80;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+    padding:10px 16px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 -8px 24px rgba(19,83,58,.1);
+    transform:translateY(120%);transition:transform .3s var(--ease)
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta .info{flex:1;min-width:0}
+  .sticky-cta .info b{display:block;font-family:"Bricolage Grotesque";font-size:1.05rem;color:var(--forest);line-height:1.1}
+  .sticky-cta .info small{color:var(--muted);font-size:.78rem;font-weight:600}
+  .sticky-cta .btn{padding:13px 20px;font-size:.95rem}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(min-width:640px){
+    .prop-grid{grid-template-columns:1fr 1fr}
+    .t-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+  }
+  @media(min-width:900px){
+    .pad{padding:96px 0}
+    .nav-links{display:flex}
+    .hero{padding:64px 0 90px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
+    .hero .sub{font-size:1.18rem}
+    .prop-grid{grid-template-columns:repeat(4,1fr)}
+    .price-grid{grid-template-columns:1fr 1.25fr;align-items:stretch}
+    .card-single{align-self:center}
+    .card-bundle{transform:scale(1.04)}
+    .why-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .t-grid{grid-template-columns:repeat(3,1fr)}
+    .foot{grid-template-columns:2fr 1fr 1fr}
+    .sticky-cta{display:none}
+    .pack{width:248px;height:308px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="PasirKita home">
+      <span class="pawmark"><svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></span>
+      Pasir<b>Kita</b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#pricing">Harga</a>
+      <a href="#why">Kenapa 5 pek</a>
+      <a href="#delivery">Penghantaran</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-wa" data-wa="order" href="#" aria-label="Order on WhatsApp">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8s1.9 3 4.7 4.2c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3z"/></svg>
+      Order
+    </a>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <div class="pill-row">
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="M3 13l1-7h16l1 7v6a1 1 0 0 1-1 1h-2v-3H6v3H4a1 1 0 0 1-1-1z"/></svg>Free hantar Shah Alam</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 1-4 4 1 7-6-3-6 3 1-7-4-4 6-1z"/></svg>Repack fresh</span>
+      </div>
+      <h1>Pasir kucing <span class="hl">murah gila</span>, hantar sampai rumah.</h1>
+      <p class="sub">Pasir gumpal import berkualiti, kami repack sendiri. <b>5kg cuma RM14</b> — atau bawak balik bundle 25kg untuk <b>RM69 free delivery</b> dalam Shah Alam.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" data-wa="bundle" href="#">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8s1.9 3 4.7 4.2c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3z"/></svg>
+          Order bundle RM69
+        </a>
+        <a class="btn btn-ghost" href="#pricing">Lihat harga</a>
+      </div>
+      <div class="trust">
+        <span class="stars">★★★★★</span>
+        <span>Cat parents Shah Alam suka</span>
+        <span class="dot"></span>
+        <span>Same-day delivery</span>
+        <span class="dot"></span>
+        <span>COD / DuitNow</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <svg class="paw-deco p1" viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+      <svg class="paw-deco p2" viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+      <div class="pack" role="img" aria-label="PasirKita 5kg cat litter pack">
+        <span class="glow"></span>
+        <div class="plabel">
+          <span class="pb"><svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>PasirKita</span>
+          <small>Clumping cat litter</small>
+        </div>
+        <div class="kg"><div class="n">5kg</div><div class="t">Per pack</div></div>
+      </div>
+      <div class="pricetag"><span class="rm">RM</span><span class="big">14</span><small>1 pek</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE PROPS ============ -->
+<section class="props pad">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Kenapa PasirKita</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);color:var(--forest);margin-top:12px">Harga kedai, bukan harga mahal.</h2>
+      <p class="lead" style="margin-top:14px">Kami beli terus, repack fresh, dan hantar sendiri — jadi awak dapat pasir bagus tanpa bayar lebih.</p>
+    </div>
+    <div class="prop-grid">
+      <div class="prop reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1l3 5 5 .8-3.6 3.6.9 5.2L12 18l-5.2 2.6.9-5.2L4 11.8 9 11z"/></svg></div>
+        <h3>Murah betul</h3>
+        <p>Serendah RM2.76/kg dihantar. Jimat untuk poket student & working adult.</p>
+      </div>
+      <div class="prop reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3h13v10H3zM16 8h3.5L22 11v5h-3M5.5 19a2 2 0 1 0 0-.01M17.5 19a2 2 0 1 0 0-.01"/></svg></div>
+        <h3>Hantar ke pintu</h3>
+        <p>Kami hantar guna kereta sendiri dalam Shah Alam. Tak payah angkat berat-berat.</p>
+      </div>
+      <div class="prop reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 4 7 11 7 11s7-7 7-11a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <h3>Clump padat</h3>
+        <p>Pasir gumpal cepat, kawal bau, senang scoop. Litter box kemas lebih lama.</p>
+      </div>
+      <div class="prop reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg></div>
+        <h3>Repack fresh</h3>
+        <p>Setiap pek dibungkus bersih & kemas. Bukan dropship — kami pegang stok sendiri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing pad" id="pricing">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Pilih pakej</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);color:var(--forest);margin-top:12px">Satu pek pun boleh. Tapi 5 pek lagi berbaloi.</h2>
+      <p class="lead" style="margin-top:14px">Harga flat, tiada caj tersembunyi. Bundle dapat free delivery + stok tahan berbulan.</p>
+    </div>
+
+    <div class="price-grid">
+      <!-- SINGLE -->
+      <div class="card card-single reveal">
+        <span class="ct">Starter</span>
+        <div class="name">1 Pek (5kg)</div>
+        <div class="price">
+          <span class="cur">RM</span><span class="amt">14</span><span class="per">/ pek</span>
+        </div>
+        <span class="perkg">RM2.80 / kg</span>
+        <ul class="feat">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>5kg pasir gumpal import</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>Sesuai untuk cuba dulu</li>
+          <li class="off"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>Caj hantar RM5 (Shah Alam)</li>
+        </ul>
+        <a class="btn btn-cream" data-wa="single" href="#">Order 1 pek</a>
+      </div>
+
+      <!-- BUNDLE (dominant) -->
+      <div class="card card-bundle reveal">
+        <span class="ribbon">BEST DEAL</span>
+        <span class="ct">Paling laris</span>
+        <div class="name">Bundle 5 Pek (25kg)</div>
+        <div class="price">
+          <span class="cur">RM</span><span class="amt">69</span>
+          <span class="per">/ bundle <span class="strike">RM75</span></span>
+        </div>
+        <span class="save-badge">★ Jimat RM6 + free delivery</span>
+        <div class="freebadge">
+          <svg viewBox="0 0 24 24"><path d="M3 13l1-7h16l1 7v6a1 1 0 0 1-1 1h-2v-3H6v3H4a1 1 0 0 1-1-1z"/></svg>
+          FREE car delivery — Shah Alam je
+        </div>
+        <ul class="feat">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>25kg — tahan berbulan</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>Free delivery sampai rumah</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>Tak payah order kerap</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5 1.5-1.5L9 14l9.5-9.5z"/></svg>Harga per kg paling rendah</li>
+        </ul>
+        <span class="perkg">Serendah RM2.76 / kg dihantar</span>
+        <a class="btn btn-wa" data-wa="bundle" href="#" style="margin-top:18px">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8s1.9 3 4.7 4.2c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3z"/></svg>
+          Order bundle sekarang
+        </a>
+      </div>
+    </div>
+    <p class="center" style="margin-top:20px;color:var(--muted);font-size:.88rem">⏱️ Slot penghantaran terhad setiap hari — order sebelum <b>4 PM</b> untuk same-day delivery.</p>
+  </div>
+</section>
+
+<!-- ============ WHY 5 PACKS ============ -->
+<section class="why pad" id="why">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Kira-kira jimat</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);color:var(--forest);margin-top:12px">Kenapa ramai pilih 5 pek?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="compare reveal">
+        <div class="row head"><span class="lbl">&nbsp;</span><span class="val" style="color:var(--ink)">Total</span></div>
+        <div class="row">
+          <span class="lbl">Beli 5 pek satu-satu<small>5 × RM14 + RM5 hantar</small></span>
+          <span class="val">RM75</span>
+        </div>
+        <div class="row win">
+          <span class="lbl">Bundle 25kg<small>1 order, free delivery</small></span>
+          <span class="val">RM69</span>
+        </div>
+        <div class="row">
+          <span class="lbl">Awak jimat</span>
+          <span class="val" style="color:var(--leaf)">RM6 ✓</span>
+        </div>
+      </div>
+      <div class="why-points">
+        <div class="why-point reveal">
+          <span class="n">1</span>
+          <div><h3>Bayar kurang, dapat lebih</h3><p>Free delivery + diskaun bundle bermakna setiap kg jadi lagi murah berbanding beli berasingan.</p></div>
+        </div>
+        <div class="why-point reveal">
+          <span class="n">2</span>
+          <div><h3>Kurang kerja, kurang risau</h3><p>25kg tahan berbulan untuk seekor kucing. Tak payah order tiap minggu atau risau pasir habis.</p></div>
+        </div>
+        <div class="why-point reveal">
+          <span class="n">3</span>
+          <div><h3>Best value per kg</h3><p>Serendah RM2.76/kg dihantar ke rumah — antara harga paling murah yang awak boleh dapat di Shah Alam.</p></div>
+        </div>
+        <a class="btn btn-wa reveal" data-wa="bundle" href="#" style="align-self:flex-start;margin-top:6px">Ambil bundle RM69</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERY ============ -->
+<section class="delivery pad" id="delivery">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Macam mana hantar</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);margin-top:12px">Order 1 minit, sampai rumah.</h2>
+      <p class="lead">Free delivery dalam Shah Alam je buat masa ni — kami hantar guna kereta sendiri, same-day atau next-day.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">01</span>
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg></div>
+        <h3>WhatsApp kami</h3>
+        <p>Tekan butang order, pilih bundle atau 1 pek, dan hantar alamat awak. Senang.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02</span>
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h12"/></svg></div>
+        <h3>Confirm & bayar</h3>
+        <p>Kami sahkan stok & masa hantar. Bayar guna DuitNow, transfer, e-wallet atau COD.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03</span>
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M3 13l1-7h16l1 7v6a1 1 0 0 1-1 1h-2v-3H6v3H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>Sampai ke pintu</h3>
+        <p>Kami hantar sendiri ke rumah awak. Same-day kalau order sebelum 4 PM.</p>
+      </div>
+    </div>
+    <div class="cov reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 4 7 11 7 11s7-7 7-11a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+      <span><b>Kawasan free delivery:</b> Shah Alam sahaja buat masa ni (semua seksyen). <b>Coming soon:</b> Subang, Klang & sekitar. Luar Shah Alam? WhatsApp kami untuk quote pos.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="social pad">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Kata mereka</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);color:var(--forest);margin-top:12px">Cat parents Shah Alam happy.</h2>
+      <!-- [SAMPLE] Placeholder testimonials — replace with real customer feedback when available -->
+      <span class="tnote">Contoh format ulasan — akan dikemas kini dengan ulasan sebenar pelanggan</span>
+    </div>
+    <div class="t-grid">
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>“Harga betul-betul murah dan pasir clump elok. Order pagi, petang dah sampai. Memang convenient.”</p>
+        <div class="who"><span class="av">A</span><div><b>Customer A</b><small>Shah Alam</small></div></div>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>“Amik bundle 25kg sebab ada 2 kucing. Tahan lama, tak payah beli kerap. Berbaloi sangat.”</p>
+        <div class="who"><span class="av">B</span><div><b>Customer B</b><small>Shah Alam</small></div></div>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>“Bau terkawal, tak berhabuk sangat. Free delivery tu yang buat aku repeat order. Recommended.”</p>
+        <div class="who"><span class="av">C</span><div><b>Customer C</b><small>Shah Alam</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq pad" id="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Soalan lazim</span>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.6rem);color:var(--forest);margin-top:12px">Ada soalan? Kami jawab.</h2>
+    </div>
+    <div class="acc">
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Selamat untuk kucing?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="panel"><p>Ya. Ia pasir gumpal jenis bentonite — bahan yang sama digunakan kebanyakan clumping litter di pasaran. Kami repack dalam keadaan bersih dan kemas. Nak tahu butiran bahan penuh? WhatsApp kami dan kami kongsi spec produk.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Berapa lama 5kg boleh tahan?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="panel"><p>Untuk seekor kucing dengan scoop harian, 5kg biasanya tahan lebih kurang 2–3 minggu. Bundle 25kg pula boleh tahan sekitar 2–3 bulan. Bergantung pada bilangan kucing dan tabiat litter box.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Kawasan hantar mana?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="panel"><p>Buat masa ni kami free delivery dalam Shah Alam sahaja (semua seksyen), guna kereta sendiri — same-day kalau order sebelum 4 PM, atau next-day. Kawasan lain akan dibuka tak lama lagi. Luar Shah Alam boleh WhatsApp untuk quote penghantaran.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Cara bayar macam mana?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="panel"><p>Senang je — DuitNow QR, online transfer (FPX), Touch 'n Go eWallet, atau Cash On Delivery (COD) untuk kawasan Shah Alam. Kami confirm semua dalam WhatsApp sebelum hantar.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button aria-expanded="false"><span>Kenapa harga boleh murah sangat?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="panel"><p>Kami beli stok terus dalam kuantiti besar dan repack sendiri, jadi tiada markup kedai berlapis. Kami hantar sendiri dalam Shah Alam untuk jimatkan kos kurier. Penjimatan tu kami pulangkan dalam bentuk harga rendah.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final pad">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Litter box jimat bermula <span class="sand">hari ini.</span></h2>
+      <p>Ambil bundle 25kg RM69 dengan free delivery, atau cuba satu pek dulu. Order ambil masa seminit je.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" data-wa="bundle" href="#">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8s1.9 3 4.7 4.2c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3z"/></svg>
+          Order bundle RM69
+        </a>
+        <a class="btn btn-ghost" data-wa="single" href="#">Cuba 1 pek RM14</a>
+      </div>
+      <p class="micro">Free delivery Shah Alam • Same-day sebelum 4 PM • COD tersedia</p>
+    </div>
+  </div>
+  <div class="paw-band" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand"><span class="pawmark"><svg viewBox="0 0 24 24"><path d="M12 14c-2.5 0-5 2-5 4.2C7 19.7 8.3 21 10.5 21h3C15.7 21 17 19.7 17 18.2 17 16 14.5 14 12 14zM6 9.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></span>Pasir<b>Kita</b></div>
+        <p style="margin-top:12px;max-width:320px">Pasir kucing import berkualiti, repack fresh, harga jujur. Hantar sampai rumah dalam Shah Alam.</p>
+      </div>
+      <div class="fcol">
+        <h4>Pautan</h4>
+        <a href="#pricing">Harga</a>
+        <a href="#why">Kenapa 5 pek</a>
+        <a href="#delivery">Penghantaran</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="fcol">
+        <h4>Hubungi</h4>
+        <a data-wa="order" href="#">WhatsApp order</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <p style="margin-top:6px">Shah Alam, Selangor 🇲🇾</p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> PasirKita. Hak cipta terpelihara.</span>
+      <span>Dibuat untuk cat parents Malaysia 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="info"><b>Bundle 25kg — RM69</b><small>Free delivery Shah Alam</small></div>
+  <a class="btn btn-wa" data-wa="bundle" href="#">
+    <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8s1.9 3 4.7 4.2c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3z"/></svg>
+    Order
+  </a>
+</div>
+
+<script>
+  // ===== WhatsApp links =====
+  // CHANGE THIS to your real WhatsApp number (60 + number, no +, no spaces)
+  const WA_NUMBER = "60123456789";
+  const MSGS = {
+    bundle: "Hi PasirKita! 👋 Saya nak order *Bundle 5 pek (25kg) - RM69* dengan free delivery Shah Alam. Boleh bagi details?",
+    single: "Hi PasirKita! 👋 Saya nak order *1 pek (5kg) - RM14*. Boleh bagi details penghantaran?",
+    order:  "Hi PasirKita! 👋 Saya berminat nak order pasir kucing. Boleh bagi details?"
+  };
+  document.querySelectorAll('[data-wa]').forEach(el=>{
+    const key = el.getAttribute('data-wa');
+    const txt = MSGS[key] || MSGS.order;
+    el.setAttribute('href', `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(txt)}`);
+    el.setAttribute('target','_blank');
+    el.setAttribute('rel','noopener');
+  });
+
+  // ===== Year =====
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ===== FAQ accordion =====
+  document.querySelectorAll('.qa button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const qa = btn.parentElement;
+      const panel = qa.querySelector('.panel');
+      const open = qa.getAttribute('aria-open') === 'true';
+      qa.setAttribute('aria-open', String(!open));
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.style.maxHeight = open ? null : panel.scrollHeight + 'px';
+    });
+  });
+
+  // ===== Reveal on scroll =====
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach((el,i)=>{
+      el.style.transitionDelay = (i % 4 * 60) + 'ms';
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+
+  // ===== Sticky mobile CTA (show after hero) =====
+  const sticky = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(([e])=>{
+      sticky.classList.toggle('show', !e.isIntersecting);
+    },{threshold:0}).observe(hero);
+  }
+</script>
+</body>
+</html>
